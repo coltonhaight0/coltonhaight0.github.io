@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Colton Haight">
-<meta name="dcterms.date" content="2024-11-05">
+<meta name="dcterms.date" content="2024-11-17">
 
 <title>Who Was The Best Three-Point Shooter in Men’s College Basketball During The 2023-2024 Season? – Haight Talks Sports</title>
 <style>
@@ -170,7 +170,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">November 5, 2024</p>
+        <p class="date">November 17, 2024</p>
       </div>
     </div>
     
@@ -189,7 +189,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>Basketball</p>
+<p>Three point shooting is a relatively new concept in the sport of basketball. After this season, NCAA men’s basketball will have been around for 130 years. That’s an extremely long amount of time. But the three point line has only been a part of the game of basketball since 1986. Only about 40 years of the 130 year history of the game there has been a three point line. But with recent styles of play and popularity it seems like it could have been around for the entire time basketball has been an organized sport.</p>
+<p>The recent surge in the volume of three pointers shot has risen a significant amount over just the last 10-15 years thanks to the success of Stephen Curry and the Golden State Warriors during their dynasty run. If you can not shoot three pointers in today’s game, you are falling behind.</p>
+<p>In professional basketball it is pretty easy to see who the best shooters are because there are only 30 teams and 18 players per team roster, or 540 players. But college basketball is a bit harder to figure out. There are a whopping 351 NCAA Division 1 men’s college basketball teams and with 15 players per roster that brings a total of 5,265 players!</p>
+<p>In this post we will be trying to figure out who the best three point shooter is in Division 1 men’s college basketball over the 2023-2024 season.</p>
+<p>The hoopR package from the <a href="https://www.sportsdataverse.org/packages"><code>sportsdataverse</code></a> has given me the data to help us figure out who could be the best three point shooter in all of D1 men’s college basketball last season.</p>
+<p>Let’s start by looking at a plot of all D1 men’s college basketball players who shot a total of at least 200 three pointers last season, comparing the total three pointers a player made to the amount of three point shots they took.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -242,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>hello</p>
+<p>Just looking at the scatter plot you can tell there are two pretty extreme outliers. Let’s figure out who they are. While we are finding out who the outliers are, here’s another plot that changes the size of the dots to show each player’s three point percentage from the 2023-2024 season.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -279,7 +284,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>hello</p>
+<p>The two outliers are Jack Gohlke of the Oakland Golden Grizzlies and Tyler Thomas of the Hofstra Pride. The sheer number of three pointers shot and made by these two players last season are head and shoulders above every other player in men’s college basketball. Gohlke made 137 three pointers on the season while Thomas made 125 three pointers.</p>
+<p>Jack Gohlke had a crazy run in the NCAA Men’s Tournament last season where he went 10-20 from behind the arc in an upset win over 3rd seeded Kentucky as the 14th seed. He also knocked down 6 more threes in the next game of the tournament against NC State but fell short and were defeated.</p>
+<p>Tyler Thomas and Hofstra unfortunately failed to reach the NCAA Tournament last season but he still had a great three point shooting season.</p>
+<p>The next best way to judge how good of a shooter a player is will be by looking at the percentage they make. In any level of basketball shooting 40% on three pointers means you are an extremely efficient shooter, so let’s narrow down our group of players from before to players who made at least 40% of the three pointers they shot last season. Let’s also plot out the amount of points these players scored because a great shooter should also have a good variety of ways to get points in their arsenal. The size of dots will also be based off of the amount of threes a player made last season.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -370,7 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
 <span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
 <span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), </span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), </span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>), </span>
 <span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
 <span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
@@ -399,7 +407,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
 <span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
 <span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), </span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), </span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>), </span>
 <span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
 <span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a></span>
