@@ -189,9 +189,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>Three point shooting is a relatively new concept in the sport of basketball. After this season, NCAA men’s basketball will have been around for 130 years. That’s an extremely long amount of time. But the three point line has only been a part of the game of basketball since 1986. Only about 40 years of the 130 year history of the game there has been a three point line. But with recent styles of play and popularity it seems like it could have been around for the entire time basketball has been an organized sport.</p>
+<p>Three point shooting is a relatively new concept in the sport of basketball. After this season, NCAA men’s basketbal will have been around for <a href="https://www.ncaa.com/news/basketball-men/article/2023-01-18/what-we-know-about-first-college-basketball-game-ever-played"><code>130 years</code></a>. That’s an extremely long amount of time. But the <a href="https://www.usab.com/news/2014/01/history-of-the-3-pointer"><code>three point line</code></a> has only been a part of the game of basketball since 1986. Only about 40 years of the 130 year history of the game there has been a three point line. But with recent styles of play and popularity it seems like it could have been around for the entire time basketball has been an organized sport.</p>
 <p>The recent surge in the volume of three pointers shot has risen a significant amount over just the last 10-15 years thanks to the success of Stephen Curry and the Golden State Warriors during their dynasty run. If you can not shoot three pointers in today’s game, you are falling behind.</p>
-<p>In professional basketball it is pretty easy to see who the best shooters are because there are only 30 teams and 18 players per team roster, or 540 players. But college basketball is a bit harder to figure out. There are a whopping 351 NCAA Division 1 men’s college basketball teams and with 15 players per roster that brings a total of 5,265 players!</p>
+<p>In professional basketball it is pretty easy to see who the best shooters are because there are only 30 teams and 18 players per team roster, or <a href="https://www.spotrac.com/news/_/id/2487/the-nbas-vanishing-15th-roster-spot#:~:text=The%20reality%20is%20that%20there,and%2090%20two%2Dway%20spots."><code>540</code></a> players. But college basketball is a bit harder to figure out. There are a whopping <a href="https://www.ncsasports.org/mens-basketball/division-1-colleges"><code>351</code></a> NCAA Division 1 men’s college basketball teams and with 15 players per roster that brings a total of 5,265 players!</p>
 <p>In this post we will be trying to figure out who the best three point shooter is in Division 1 men’s college basketball over the 2023-2024 season.</p>
 <p>The hoopR package from the <a href="https://www.sportsdataverse.org/packages"><code>sportsdataverse</code></a> and <a href="https://www.espn.com/mens-college-basketball/stats/player/_/season/2024/table/offensive/sort/avgPoints/dir/desc"><code>ESPN</code></a> have given me the data to help us figure out who could be the best three point shooter in all of D1 men’s college basketball last season.</p>
 <p>Let’s start by looking at a plot of all D1 men’s college basketball players who shot a total of at least 200 three pointers last season, comparing the total three pointers a player made to the amount of three point shots they took.</p>
@@ -235,7 +235,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), </span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), </span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>), </span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -272,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), </span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), </span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>), </span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -285,9 +285,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>The two outliers are Jack Gohlke of the Oakland Golden Grizzlies and Tyler Thomas of the Hofstra Pride. The sheer number of three pointers shot and made by these two players last season are head and shoulders above every other player in men’s college basketball. Gohlke made 137 three pointers on the season while Thomas made 125 three pointers.</p>
-<p>Jack Gohlke had a crazy run in the NCAA Men’s Tournament last season where he went 10-20 from behind the arc in an upset win over 3rd seeded Kentucky as the 14th seed. He also knocked down 6 more threes in the next game of the tournament against NC State but fell short and were defeated.</p>
-<p>Tyler Thomas and Hofstra unfortunately failed to reach the NCAA Tournament last season but he still had a great three point shooting season.</p>
-<p>The next best way to judge how good of a shooter a player is will be by looking at the percentage they make. In any level of basketball shooting 40% on three pointers means you are an extremely efficient shooter, so let’s narrow down our group of players from before to players who made at least 40% of the three pointers they shot last season. Let’s also plot out the amount of points these players scored because a great shooter should also have a good variety of ways to get points in their arsenal. The size of dots will also be based off of the amount of threes a player made last season.</p>
+<p><a href="https://www.espn.com/mens-college-basketball/player/gamelog/_/id/5177205/jack-gohlke"><code>Jack Gohlke</code></a> had a crazy run in the NCAA Men’s Tournament last season where he went 10-20 from behind the arc in an upset win over 3rd seeded Kentucky as the 14th seed. He also knocked down 6 more threes in the next game of the tournament against NC State but fell short and were defeated.</p>
+<p><a href="https://www.espn.com/mens-college-basketball/player/gamelog/_/id/4593126/tyler-thomas"><code>Tyler Thomas</code></a> and Hofstra unfortunately failed to reach the NCAA Tournament last season but he still had a great three point shooting season.</p>
+<p>The next best way to judge how good of a shooter a player is will be by looking at the percentage they make. In any level of basketball shooting 40% on three pointers means you are an extremely efficient shooter, so let’s narrow down our group of players from before to players who made at least 40% of the three pointers they shot last season. Let’s also plot out the amount of points these players scored because a great three point shooter should also have a good amount of points. The size of dots will also be based off of the amount of threes a player made last season.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -320,7 +320,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), </span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), </span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>), </span>
 <span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
 <span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -332,7 +332,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>hello</p>
+<p>Looking at the plot above, a few things are very clear.</p>
+<p><a href="https://www.espn.com/mens-college-basketball/player/stats/_/id/4591259/koby-brea"><code>Koby Brea</code></a> is a flamethrower from behind the arc. He made almost half the threes he took last year. He shot 201 three pointers and made 100 of them last season. That’s a blistering <strong>49.8%</strong>! He might not have scored close to some of the other guys on the plot but near 50% is extremely impressive.</p>
+<p>Next, <a href="https://www.espn.com/mens-college-basketball/player/stats/_/id/4703530/mark-sears"><code>Mark Sears</code></a> is a pure scorer. While shooting 43.6% from three point land he was also far and away the highest scorer on this list, scoring close to 800 points last season while also being a huge part of an Alabama final four run in the 2023-2024 season.</p>
+<p>Last thing, <a href="https://www.espn.com/nba/player/gamelog/_/id/4433083/type/mens-college-basketball"><code>Cam Spencer</code></a> was huge in UConns second title run in a row. He shot a very efficient 44% from three while also being a big time scorer for the Back to Back National Champions.</p>
+<p>We are almost able to crown college basketball’s best shooter for the 2023-2024 season. Let’s narrow down each category to get the top ten of each type of statistic that was talked about previously and get some charts comparing them to each other.</p>
+<p>Here are a few bar charts of the top ten players in each category we looked at for three point shooting. The first bar chart is comparing the different amount of points scored from three pointers and points scored not from three pointers for different players. The second bar chart is just comparing the most three pointers made by different players. And the last one is just comparing three point percentages.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -421,6 +426,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>These two plots are pretty similar to each other. The top plot is interesting to me because there are a few players that stand out as what I would call pure shooters. I would classify pure shooters as players where almost all of their shots are from behind the arc. Jack Gohlke, Ja’Monta Black, Gabe Dorsey, and Reyne Smith are those few players with the most points from three pointers and the fewest amount of points not from three pointers.</p>
+<p>The bottom plot goes hand in hand with the Type of Point plot above but just lets us focus on one thing, the total three pointers made. This plot has all of the same players in the same spots from the top plot but I think it helps us compare the players a bit better by the amount of threes each of them made during the 2023-2024 season.</p>
+<p>Let’s look at the comparison of player three point percentage on the plot below.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -451,15 +459,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Player Name"</span>,</span>
 <span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Player Three Point Percentage"</span>,</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Three Point Percentage"</span>,</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"One very big outlier"</span>,</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Players who were on fire from 3 in the 2023-2024 Season"</span>,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Koby Brea is a flamethrower"</span>,</span>
 <span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: https://hoopr.sportsdataverse.org/ | By: Colton Haight"</span></span>
 <span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
 <span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
 <span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), </span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), </span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>), </span>
 <span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
 <span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -471,6 +479,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>Here we get to look at some different names. There is an obvious outlier here. Koby Brea was an absolute flamethrower shooting <strong>49.8%</strong> from behind the arc, an insane percentage. But we already talked about Koby Brea earlier, let’s talk about some other guys on this list. <a href="https://www.espn.com/nba/player/gamelog/_/id/4592712/type/mens-college-basketball"><code>Boo Buie</code></a> was a big time player for Northwestern last season. He shot an extremely efficient 43.4% from three point land while leading the Wildcats to a second round appearance in the NCAA Tournament last season. Another big name is <a href="https://www.espn.com/nba/player/gamelog/_/id/4683778/type/mens-college-basketball"><code>Jared McCain</code></a>. In his first and only season at Duke, he was a huge piece in their elite eight run in the NCAA Tournament last season. He shot 41.4% from three in the regular season and a blazing 50% from three during that Elite Eight run.</p>
+<p>There are a lot of great players that we just talked about but the question still remains: who was the best three point shooter from the 2023-2024 season?</p>
+<p>There was one guy that was on every plot and chart above. <a href="https://www.espn.com/nba/player/gamelog/_/id/4396963/type/mens-college-basketball"><code>Blake Hinson</code></a> was in the top 10 in three pointers made and in points from three’s while also being 6th in three point percentage in all players from college basketball last season. For Pitt he shot 42.1% from three on a high volume of almost 8 attempts a game while also putting up 609 points on the season or 18.5 points a game. He scored 54.2% of his points from three point range(330) which shows how versatile he was for Pitt while also being a great shooter. Unfortunately, Pitt did not make the NCAA Tournament after losing in the second round of the ACC Tournament last season so we did not get to see Blake Hinson in action when the stakes are the highest.</p>
+<p>With all of this information I think there is enough evidence to crown Blake Hinson as the best three point shooter for the 2023-2024 NCAA men’s basketball season.</p>
 
 
 
