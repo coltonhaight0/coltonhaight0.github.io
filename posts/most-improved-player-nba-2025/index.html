@@ -152,8 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <h1 class="title">Who is the Most Improved Player in the NBA so Far in the 2025 Season?</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">NBA</div>
-                <div class="quarto-category">Basketbal</div>
-                <div class="quarto-category">Awards</div>
+                <div class="quarto-category">Basketball</div>
               </div>
                   </div>
   </div>
@@ -383,56 +382,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>mipplayers2 <span class="ot">&lt;-</span> mipplayers <span class="sc">|&gt;</span></span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"Player"</span> <span class="ot">=</span> <span class="st">"athlete_display_name"</span>)<span class="sc">|&gt;</span></span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Player)<span class="sc">|&gt;</span></span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(PPG, RPG, APG, SPG, BPG, FGPCT, THREEPCT, AllStats)<span class="sc">|&gt;</span></span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(AllStats))</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>mipplayers2 <span class="sc">|&gt;</span></span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Top ten in NBA Most Improved Player odds"</span>,</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Some players are putting up great numbers"</span></span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">weight =</span> <span class="st">"bold"</span>, <span class="at">align =</span> <span class="st">"left"</span>),</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="st">"title"</span>)</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Player"</span> <span class="ot">=</span> <span class="st">"athlete_display_name"</span>,</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>    <span class="st">"FG%"</span> <span class="ot">=</span> <span class="st">"FGPCT"</span>,</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>    <span class="st">"3FG%"</span> <span class="ot">=</span> <span class="st">"THREEPCT"</span></span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    )<span class="sc">|&gt;</span></span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Player)<span class="sc">|&gt;</span></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(PPG, RPG, APG, SPG, BPG, <span class="st">`</span><span class="at">FG%</span><span class="st">`</span>, <span class="st">`</span><span class="at">3FG%</span><span class="st">`</span>, AllStats)<span class="sc">|&gt;</span></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(AllStats))</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>mipplayers2 <span class="sc">|&gt;</span></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Top ten in NBA Most Improved Player odds"</span>,</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Some players are putting up great numbers"</span></span>
 <span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">align =</span> <span class="st">"left"</span>),</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="st">"subtitle"</span>)</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">weight =</span> <span class="st">"bold"</span>, <span class="at">align =</span> <span class="st">"left"</span>),</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="st">"title"</span>)</span>
 <span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    <span class="at">source_note =</span> <span class="fu">md</span>(<span class="st">"**Source**: hoopR: The SportsDataverse's R Package for Men's Basketball Data | **By**: Colton Haight"</span>)</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> <span class="fu">everything</span>()),</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_borders</span>(<span class="at">sides =</span> <span class="st">"bottom"</span>, <span class="at">weight =</span> <span class="fu">px</span>(<span class="dv">3</span>)),</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">12</span>)</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_row_striping</span>() <span class="sc">|&gt;</span></span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_table_lines</span>(<span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">align =</span> <span class="st">"left"</span>),</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="st">"subtitle"</span>)</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    <span class="at">source_note =</span> <span class="fu">md</span>(<span class="st">"**Source**: hoopR: The SportsDataverse's R Package for Men's Basketball Data | **By**: Colton Haight"</span>)</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> <span class="fu">everything</span>()),</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_borders</span>(<span class="at">sides =</span> <span class="st">"bottom"</span>, <span class="at">weight =</span> <span class="fu">px</span>(<span class="dv">3</span>)),</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">12</span>)</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_row_striping</span>() <span class="sc">|&gt;</span></span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_table_lines</span>(<span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="oqsuyqjftm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#oqsuyqjftm table {
+<div id="aoeotezkyz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#aoeotezkyz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#oqsuyqjftm thead, #oqsuyqjftm tbody, #oqsuyqjftm tfoot, #oqsuyqjftm tr, #oqsuyqjftm td, #oqsuyqjftm th {
+#aoeotezkyz thead, #aoeotezkyz tbody, #aoeotezkyz tfoot, #aoeotezkyz tr, #aoeotezkyz td, #aoeotezkyz th {
   border-style: none;
 }
 
-#oqsuyqjftm p {
+#aoeotezkyz p {
   margin: 0;
   padding: 0;
 }
 
-#oqsuyqjftm .gt_table {
+#aoeotezkyz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -458,12 +461,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#oqsuyqjftm .gt_caption {
+#aoeotezkyz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#oqsuyqjftm .gt_title {
+#aoeotezkyz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -475,7 +478,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#oqsuyqjftm .gt_subtitle {
+#aoeotezkyz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -487,7 +490,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#oqsuyqjftm .gt_heading {
+#aoeotezkyz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -499,13 +502,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#oqsuyqjftm .gt_bottom_border {
+#aoeotezkyz .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#oqsuyqjftm .gt_col_headings {
+#aoeotezkyz .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -520,7 +523,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#oqsuyqjftm .gt_col_heading {
+#aoeotezkyz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -540,7 +543,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#oqsuyqjftm .gt_column_spanner_outer {
+#aoeotezkyz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -552,15 +555,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#oqsuyqjftm .gt_column_spanner_outer:first-child {
+#aoeotezkyz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#oqsuyqjftm .gt_column_spanner_outer:last-child {
+#aoeotezkyz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#oqsuyqjftm .gt_column_spanner {
+#aoeotezkyz .gt_column_spanner {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -572,11 +575,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#oqsuyqjftm .gt_spanner_row {
+#aoeotezkyz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#oqsuyqjftm .gt_group_heading {
+#aoeotezkyz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -602,7 +605,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#oqsuyqjftm .gt_empty_group_heading {
+#aoeotezkyz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -617,15 +620,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#oqsuyqjftm .gt_from_md > :first-child {
+#aoeotezkyz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#oqsuyqjftm .gt_from_md > :last-child {
+#aoeotezkyz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#oqsuyqjftm .gt_row {
+#aoeotezkyz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -644,7 +647,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#oqsuyqjftm .gt_stub {
+#aoeotezkyz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -657,7 +660,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#oqsuyqjftm .gt_stub_row_group {
+#aoeotezkyz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -671,15 +674,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#oqsuyqjftm .gt_row_group_first td {
+#aoeotezkyz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#oqsuyqjftm .gt_row_group_first th {
+#aoeotezkyz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#oqsuyqjftm .gt_summary_row {
+#aoeotezkyz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -689,16 +692,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#oqsuyqjftm .gt_first_summary_row {
+#aoeotezkyz .gt_first_summary_row {
   border-top-style: none;
   border-top-color: #D3D3D3;
 }
 
-#oqsuyqjftm .gt_first_summary_row.thick {
+#aoeotezkyz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#oqsuyqjftm .gt_last_summary_row {
+#aoeotezkyz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -708,7 +711,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#oqsuyqjftm .gt_grand_summary_row {
+#aoeotezkyz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -718,7 +721,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#oqsuyqjftm .gt_first_grand_summary_row {
+#aoeotezkyz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -728,7 +731,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#oqsuyqjftm .gt_last_grand_summary_row_top {
+#aoeotezkyz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -738,11 +741,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#oqsuyqjftm .gt_striped {
+#aoeotezkyz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#oqsuyqjftm .gt_table_body {
+#aoeotezkyz .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -751,7 +754,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#oqsuyqjftm .gt_footnotes {
+#aoeotezkyz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -765,7 +768,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#oqsuyqjftm .gt_footnote {
+#aoeotezkyz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -774,7 +777,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#oqsuyqjftm .gt_sourcenotes {
+#aoeotezkyz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -788,7 +791,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#oqsuyqjftm .gt_sourcenote {
+#aoeotezkyz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -796,72 +799,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#oqsuyqjftm .gt_left {
+#aoeotezkyz .gt_left {
   text-align: left;
 }
 
-#oqsuyqjftm .gt_center {
+#aoeotezkyz .gt_center {
   text-align: center;
 }
 
-#oqsuyqjftm .gt_right {
+#aoeotezkyz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#oqsuyqjftm .gt_font_normal {
+#aoeotezkyz .gt_font_normal {
   font-weight: normal;
 }
 
-#oqsuyqjftm .gt_font_bold {
+#aoeotezkyz .gt_font_bold {
   font-weight: bold;
 }
 
-#oqsuyqjftm .gt_font_italic {
+#aoeotezkyz .gt_font_italic {
   font-style: italic;
 }
 
-#oqsuyqjftm .gt_super {
+#aoeotezkyz .gt_super {
   font-size: 65%;
 }
 
-#oqsuyqjftm .gt_footnote_marks {
+#aoeotezkyz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#oqsuyqjftm .gt_asterisk {
+#aoeotezkyz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#oqsuyqjftm .gt_indent_1 {
+#aoeotezkyz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#oqsuyqjftm .gt_indent_2 {
+#aoeotezkyz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#oqsuyqjftm .gt_indent_3 {
+#aoeotezkyz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#oqsuyqjftm .gt_indent_4 {
+#aoeotezkyz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#oqsuyqjftm .gt_indent_5 {
+#aoeotezkyz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#oqsuyqjftm .katex-display {
+#aoeotezkyz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#oqsuyqjftm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#aoeotezkyz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -881,8 +884,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th id="APG" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold" scope="col">APG</th>
 <th id="SPG" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold" scope="col">SPG</th>
 <th id="BPG" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold" scope="col">BPG</th>
-<th id="FGPCT" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold" scope="col">FGPCT</th>
-<th id="THREEPCT" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold" scope="col">THREEPCT</th>
+<th id="FG%" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold" scope="col">FG%</th>
+<th id="a3FG%" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold" scope="col">3FG%</th>
 <th id="AllStats" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold" scope="col">AllStats</th>
 </tr>
 </thead>
@@ -894,8 +897,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="APG">6.9</td>
 <td class="gt_row gt_right" headers="SPG">1.1</td>
 <td class="gt_row gt_right" headers="BPG">0.2</td>
-<td class="gt_row gt_right" headers="FGPCT">43.0</td>
-<td class="gt_row gt_right" headers="THREEPCT">35.6</td>
+<td class="gt_row gt_right" headers="FG%">43.0</td>
+<td class="gt_row gt_right" headers="3FG%">35.6</td>
 <td class="gt_row gt_right" headers="AllStats">44.7</td>
 </tr>
 <tr class="even">
@@ -905,8 +908,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right gt_striped" headers="APG">5.7</td>
 <td class="gt_row gt_right gt_striped" headers="SPG">1.7</td>
 <td class="gt_row gt_right gt_striped" headers="BPG">0.5</td>
-<td class="gt_row gt_right gt_striped" headers="FGPCT">46.5</td>
-<td class="gt_row gt_right gt_striped" headers="THREEPCT">32.1</td>
+<td class="gt_row gt_right gt_striped" headers="FG%">46.5</td>
+<td class="gt_row gt_right gt_striped" headers="3FG%">32.1</td>
 <td class="gt_row gt_right gt_striped" headers="AllStats">37.9</td>
 </tr>
 <tr class="odd">
@@ -916,8 +919,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="APG">5.3</td>
 <td class="gt_row gt_right" headers="SPG">1.3</td>
 <td class="gt_row gt_right" headers="BPG">1.0</td>
-<td class="gt_row gt_right" headers="FGPCT">50.8</td>
-<td class="gt_row gt_right" headers="THREEPCT">35.6</td>
+<td class="gt_row gt_right" headers="FG%">50.8</td>
+<td class="gt_row gt_right" headers="3FG%">35.6</td>
 <td class="gt_row gt_right" headers="AllStats">36.1</td>
 </tr>
 <tr class="even">
@@ -927,8 +930,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right gt_striped" headers="APG">5.0</td>
 <td class="gt_row gt_right gt_striped" headers="SPG">2.1</td>
 <td class="gt_row gt_right gt_striped" headers="BPG">0.8</td>
-<td class="gt_row gt_right gt_striped" headers="FGPCT">51.2</td>
-<td class="gt_row gt_right gt_striped" headers="THREEPCT">39.3</td>
+<td class="gt_row gt_right gt_striped" headers="FG%">51.2</td>
+<td class="gt_row gt_right gt_striped" headers="3FG%">39.3</td>
 <td class="gt_row gt_right gt_striped" headers="AllStats">36.0</td>
 </tr>
 <tr class="odd">
@@ -938,8 +941,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="APG">2.7</td>
 <td class="gt_row gt_right" headers="SPG">1.1</td>
 <td class="gt_row gt_right" headers="BPG">1.3</td>
-<td class="gt_row gt_right" headers="FGPCT">59.6</td>
-<td class="gt_row gt_right" headers="THREEPCT">0.0</td>
+<td class="gt_row gt_right" headers="FG%">59.6</td>
+<td class="gt_row gt_right" headers="3FG%">0.0</td>
 <td class="gt_row gt_right" headers="AllStats">32.9</td>
 </tr>
 <tr class="even">
@@ -949,8 +952,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right gt_striped" headers="APG">2.4</td>
 <td class="gt_row gt_right gt_striped" headers="SPG">0.5</td>
 <td class="gt_row gt_right gt_striped" headers="BPG">1.0</td>
-<td class="gt_row gt_right gt_striped" headers="FGPCT">60.2</td>
-<td class="gt_row gt_right gt_striped" headers="THREEPCT">NaN</td>
+<td class="gt_row gt_right gt_striped" headers="FG%">60.2</td>
+<td class="gt_row gt_right gt_striped" headers="3FG%">NaN</td>
 <td class="gt_row gt_right gt_striped" headers="AllStats">30.6</td>
 </tr>
 <tr class="odd">
@@ -960,8 +963,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="APG">2.4</td>
 <td class="gt_row gt_right" headers="SPG">1.1</td>
 <td class="gt_row gt_right" headers="BPG">0.2</td>
-<td class="gt_row gt_right" headers="FGPCT">50.5</td>
-<td class="gt_row gt_right" headers="THREEPCT">50.7</td>
+<td class="gt_row gt_right" headers="FG%">50.5</td>
+<td class="gt_row gt_right" headers="3FG%">50.7</td>
 <td class="gt_row gt_right" headers="AllStats">30.5</td>
 </tr>
 <tr class="even">
@@ -971,8 +974,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right gt_striped" headers="APG">1.8</td>
 <td class="gt_row gt_right gt_striped" headers="SPG">0.7</td>
 <td class="gt_row gt_right gt_striped" headers="BPG">0.3</td>
-<td class="gt_row gt_right gt_striped" headers="FGPCT">47.5</td>
-<td class="gt_row gt_right gt_striped" headers="THREEPCT">40.9</td>
+<td class="gt_row gt_right gt_striped" headers="FG%">47.5</td>
+<td class="gt_row gt_right gt_striped" headers="3FG%">40.9</td>
 <td class="gt_row gt_right gt_striped" headers="AllStats">27.3</td>
 </tr>
 <tr class="odd">
@@ -982,8 +985,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="APG">3.2</td>
 <td class="gt_row gt_right" headers="SPG">3.1</td>
 <td class="gt_row gt_right" headers="BPG">0.9</td>
-<td class="gt_row gt_right" headers="FGPCT">44.8</td>
-<td class="gt_row gt_right" headers="THREEPCT">29.9</td>
+<td class="gt_row gt_right" headers="FG%">44.8</td>
+<td class="gt_row gt_right" headers="3FG%">29.9</td>
 <td class="gt_row gt_right" headers="AllStats">25.7</td>
 </tr>
 <tr class="even">
@@ -993,8 +996,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right gt_striped" headers="APG">1.8</td>
 <td class="gt_row gt_right gt_striped" headers="SPG">1.2</td>
 <td class="gt_row gt_right gt_striped" headers="BPG">0.7</td>
-<td class="gt_row gt_right gt_striped" headers="FGPCT">56.6</td>
-<td class="gt_row gt_right gt_striped" headers="THREEPCT">41.1</td>
+<td class="gt_row gt_right gt_striped" headers="FG%">56.6</td>
+<td class="gt_row gt_right gt_striped" headers="3FG%">41.1</td>
 <td class="gt_row gt_right gt_striped" headers="AllStats">23.9</td>
 </tr>
 </tbody><tfoot class="gt_sourcenotes">
